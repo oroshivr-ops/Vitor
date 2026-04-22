@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Manutenção preventiva de ar-condicionado por assinatura em Araguaína/TO. Técnicos SENAI, a partir de R$ 49/mês, sem fidelidade.">
+<title>Clima Garantido – Manutenção de Ar-Condicionado por Assinatura | Araguaína/TO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: #0F172A;
+  background: #F8FAFC;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+h1,h2,h3,h4,h5 { font-family: 'Outfit', sans-serif; line-height: 1.15; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── CSS VARIABLES ─── */
+:root {
+  --primary: #0D3F7A;
+  --primary-mid: #1558A8;
+  --primary-light: #2176CC;
+  --accent: #0EA5E9;
+  --accent-light: #E0F2FE;
+  --green: #16A34A;
+  --green-dark: #15803D;
+  --green-light: #DCFCE7;
+  --bg: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text: #0F172A;
+  --text-muted: #475569;
+  --text-light: #94A3B8;
+  --border: #E2E8F0;
+  --border-mid: #CBD5E1;
+  --shadow-sm: 0 1px 3px rgba(15,23,42,.07), 0 1px 2px rgba(15,23,42,.05);
+  --shadow-md: 0 4px 16px rgba(15,23,42,.09), 0 1px 4px rgba(15,23,42,.06);
+  --shadow-lg: 0 16px 48px rgba(15,23,42,.12), 0 4px 12px rgba(15,23,42,.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --max: 1080px;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(22,163,74,.4); }
+  50%      { box-shadow: 0 0 0 10px rgba(22,163,74,0); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ─── UTILITY ─── */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+.section { padding: 5rem 1.25rem; }
+.section-sm { padding: 3rem 1.25rem; }
+.tag-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-light); color: var(--primary);
+  font-family: 'Outfit', sans-serif; font-size: .75rem; font-weight: 600;
+  padding: 5px 14px; border-radius: 99px;
+  letter-spacing: .5px; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.tag-pill .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--primary-light); display: inline-block;
+}
+.section-header { max-width: 640px; margin-bottom: 3rem; }
+.section-header h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--text); margin-bottom: .75rem; }
+.section-header p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ─── NAV ─── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(248,250,252,.92); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: .875rem 1.25rem;
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: var(--primary); display: flex; align-items: center; gap: 8px;
+}
+.nav-logo .logo-icon {
+  width: 32px; height: 32px; background: var(--primary);
+  border-radius: 8px; display: grid; place-items: center;
+}
+.nav-logo .logo-icon svg { width: 18px; height: 18px; }
+.nav-cta {
+  background: var(--green); color: #fff;
+  font-family: 'Outfit', sans-serif; font-size: .85rem; font-weight: 600;
+  padding: 9px 20px; border-radius: 99px; border: none; cursor: pointer;
+  transition: background .2s, transform .15s;
+  display: none;
+}
+.nav-cta:hover { background: var(--green-dark); transform: scale(1.03); }
+@media(min-width:640px) { .nav-cta { display: block; } }
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(155deg, #0A2D5C 0%, #0D3F7A 45%, #1558A8 80%, #0EA5E9 140%);
+  position: relative; overflow: hidden;
+  padding: 4.5rem 1.25rem 3.5rem;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 80% 20%, rgba(14,165,233,.18) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 50% at 10% 90%, rgba(22,163,74,.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr;
+  gap: 2.5rem; align-items: center;
+}
+@media(min-width:768px) {
+  .hero-grid { grid-template-columns: 1.1fr .9fr; }
+}
+.hero-content { animation: fadeUp .7s ease both; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+  color: #BAE6FD; font-size: .78rem; font-weight: 500; font-family: 'Outfit',sans-serif;
+  padding: 6px 14px; border-radius: 99px; margin-bottom: 1.25rem; letter-spacing: .3px;
+}
+.hero-eyebrow .live-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #4ADE80;
+  animation: pulse-glow 2s infinite;
+}
+.hero h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem); color: #fff;
+  font-weight: 800; margin-bottom: 1rem; line-height: 1.1;
+}
+.hero h1 .price-highlight {
+  color: #4ADE80;
+  background: linear-gradient(90deg, #4ADE80, #22D3EE, #4ADE80);
+  background-size: 200%;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+.hero-sub {
+  color: #BAE6FD; font-size: clamp(.9rem,2vw,1.05rem);
+  line-height: 1.75; margin-bottom: 2rem; max-width: 520px;
+}
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem;
+}
+.hbadge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+  color: #E0F2FE; font-size: .78rem; font-weight: 500;
+  padding: 5px 12px; border-radius: 99px;
+}
+.hbadge svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* HERO FORM */
+.hero-form-wrap {
+  animation: fadeUp .7s .15s ease both;
+}
+.hero-form {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(15,23,42,.04);
+}
+.form-header {
+  text-align: center; margin-bottom: 1.5rem;
+}
+.form-header h3 {
+  font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: .3rem;
+}
+.form-header p { font-size: .82rem; color: var(--text-muted); }
+.form-header .form-tag {
+  display: inline-block; background: var(--green-light); color: var(--green-dark);
+  font-size: .72rem; font-weight: 600; padding: 3px 10px; border-radius: 99px;
+  margin-bottom: .5rem; font-family: 'Outfit', sans-serif; letter-spacing: .3px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+@media(max-width:400px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: .75rem; }
+.form-group label {
+  display: block; font-size: .75rem; font-weight: 600; color: var(--text-muted);
+  margin-bottom: 4px; font-family: 'Outfit', sans-serif; letter-spacing: .3px;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: .9rem; font-family: 'Work Sans', sans-serif;
+  color: var(--text); background: var(--bg);
+  outline: none; transition: border-color .2s, box-shadow .2s;
+  appearance: none; -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(21,88,168,.1);
+  background: #fff;
+}
+.form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+.form-group textarea { resize: vertical; min-height: 72px; }
+.btn-submit {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 14px 20px; margin-top: 4px;
+  background: var(--green); color: #fff;
+  font-family: 'Outfit', sans-serif; font-size: .95rem; font-weight: 700;
+  border: none; border-radius: var(--radius-sm);
+  cursor: pointer; letter-spacing: .3px;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-submit:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(22,163,74,.35);
+}
+.btn-submit svg { width: 16px; height: 16px; flex-shrink: 0; }
+.form-note {
+  text-align: center; font-size: .73rem; color: var(--text-light);
+  margin-top: .6rem; display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+.form-note svg { width: 12px; height: 12px; }
+
+/* ─── SOCIAL PROOF STRIP ─── */
+.proof-strip {
+  background: var(--primary); padding: 1.25rem 1.25rem;
+}
+.proof-strip-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 3rem;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 10px; color: #E0F2FE;
+  font-size: .875rem;
+}
+.proof-item svg { width: 20px; height: 20px; color: #4ADE80; flex-shrink: 0; }
+.proof-num {
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.05rem; color: #fff;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how { background: #fff; }
+.steps-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; position: relative;
+}
+.step-connector {
+  display: none;
+}
+@media(min-width:768px) {
+  .steps-grid { grid-template-columns: repeat(3,1fr); }
+}
+.step-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  position: relative; overflow: hidden;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+.step-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent));
+}
+.step-num-wrap {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;
+}
+.step-num {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.step-label {
+  font-family: 'Outfit', sans-serif; font-size: .72rem; font-weight: 600;
+  color: var(--primary-light); letter-spacing: .5px; text-transform: uppercase;
+}
+.step-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .6rem; color: var(--text); }
+.step-card p { font-size: .875rem; color: var(--text-muted); line-height: 1.65; }
+.step-icon {
+  position: absolute; bottom: 1rem; right: 1rem;
+  opacity: .07; pointer-events: none;
+}
+.step-icon svg { width: 64px; height: 64px; }
+
+/* ─── PLANS ─── */
+.plans-section { background: var(--bg); }
+.plans-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+@media(min-width:900px) { .plans-grid { grid-template-columns: repeat(3,1fr); } }
+
+.plan-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.75rem;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.plan-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.plan-card.popular {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px var(--primary-light), var(--shadow-md);
+}
+.popular-badge {
+  position: absolute; top: 0; right: 0;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: #fff; font-family: 'Outfit', sans-serif; font-size: .72rem; font-weight: 700;
+  padding: 6px 16px; border-radius: 0 var(--radius-lg) 0 var(--radius-lg);
+  letter-spacing: .4px; text-transform: uppercase;
+}
+.plan-icon-wrap {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--accent-light); display: grid; place-items: center;
+  margin-bottom: 1.25rem;
+}
+.plan-icon-wrap svg { width: 26px; height: 26px; color: var(--primary); }
+.plan-card h3 { font-size: .95rem; font-weight: 600; color: var(--text-muted); margin-bottom: .25rem; }
+.plan-price {
+  font-family: 'Outfit', sans-serif; font-size: 2.4rem; font-weight: 800;
+  color: var(--text); line-height: 1; margin-bottom: .25rem;
+}
+.plan-price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+.plan-sub { font-size: .78rem; color: var(--text-light); margin-bottom: 1.5rem; }
+.plan-divider { height: 1px; background: var(--border); margin-bottom: 1.25rem; }
+.plan-features { list-style: none; flex: 1; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: .6rem; }
+.plan-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: .875rem; color: var(--text-muted); line-height: 1.5;
+}
+.feat-check {
+  width: 18px; height: 18px; border-radius: 99px; background: var(--green-light);
+  display: grid; place-items: center; flex-shrink: 0; margin-top: 1px;
+}
+.feat-check svg { width: 10px; height: 10px; color: var(--green-dark); }
+.plan-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 20px; border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 700;
+  cursor: pointer; border: none; transition: all .2s; letter-spacing: .2px;
+  text-align: center;
+}
+.plan-btn.outline {
+  background: transparent; border: 1.5px solid var(--border-mid); color: var(--text-muted);
+}
+.plan-btn.outline:hover { border-color: var(--primary-light); color: var(--primary); }
+.plan-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+}
+.plan-btn.primary:hover { box-shadow: 0 6px 20px rgba(13,63,122,.35); transform: translateY(-1px); }
+.plan-btn.green { background: var(--green); color: #fff; }
+.plan-btn.green:hover { background: var(--green-dark); box-shadow: 0 6px 20px rgba(22,163,74,.35); transform: translateY(-1px); }
+
+/* ─── WHO ─── */
+.who-section { background: #fff; }
+.who-grid {
+  display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+}
+@media(min-width:768px) { .who-grid { grid-template-columns: 1fr 1fr; } }
+.who-visual {
+  background: linear-gradient(135deg, var(--primary) 0%, #0EA5E9 100%);
+  border-radius: var(--radius-xl); padding: 3rem 2rem;
+  position: relative; overflow: hidden; color: #fff;
+  min-height: 340px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.who-visual::before {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,.07); pointer-events: none;
+}
+.who-visual::after {
+  content: ''; position: absolute; bottom: -60px; left: -30px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: rgba(255,255,255,.05); pointer-events: none;
+}
+.who-visual-icon {
+  width: 72px; height: 72px; border-radius: 18px;
+  background: rgba(255,255,255,.15); display: grid; place-items: center;
+  margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,.2);
+}
+.who-visual-icon svg { width: 36px; height: 36px; }
+.who-visual h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: .5rem; }
+.who-visual p { font-size: .9rem; color: #BAE6FD; line-height: 1.65; }
+.senai-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+  padding: 8px 16px; border-radius: 99px; margin-top: 1.25rem;
+  font-size: .8rem; font-weight: 600; color: #E0F2FE;
+}
+.who-attrs { display: flex; flex-direction: column; gap: 1rem; }
+.who-attr {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 1.25rem; border-radius: var(--radius); background: var(--bg);
+  border: 1px solid var(--border);
+  transition: border-color .2s, box-shadow .2s;
+}
+.who-attr:hover { border-color: var(--accent); box-shadow: var(--shadow-sm); }
+.who-attr-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--accent-light); display: grid; place-items: center; flex-shrink: 0;
+}
+.who-attr-icon svg { width: 20px; height: 20px; color: var(--primary); }
+.who-attr h4 { font-size: .9rem; font-weight: 700; margin-bottom: .2rem; color: var(--text); }
+.who-attr p { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ─── WHY ARAGUAÍNA ─── */
+.why-section { background: var(--bg); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.why-card {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  position: relative; overflow: hidden;
+}
+.why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-mid); }
+.why-num {
+  font-family: 'Outfit', sans-serif; font-size: 4rem; font-weight: 800; line-height: 1;
+  color: var(--accent-light); position: absolute; top: .75rem; right: 1rem;
+  pointer-events: none; user-select: none;
+}
+.why-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--accent-light); display: grid; place-items: center; margin-bottom: 1rem;
+}
+.why-icon svg { width: 22px; height: 22px; color: var(--primary); }
+.why-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .5rem; color: var(--text); }
+.why-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.65; }
+.why-highlight-box {
+  margin-top: 2rem; background: var(--primary);
+  border-radius: var(--radius-lg); padding: 2rem;
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.why-highlight-box .wh-icon {
+  font-size: 3rem; animation: float 3s ease-in-out infinite; flex-shrink: 0;
+}
+.why-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .35rem; }
+.why-highlight-box p { font-size: .875rem; color: #BAE6FD; line-height: 1.65; }
+
+/* ─── GUARANTEES ─── */
+.guarantees { background: #fff; }
+.g-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.g-card {
+  border-radius: var(--radius); padding: 1.75rem;
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: box-shadow .25s, border-color .25s;
+}
+.g-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-mid); }
+.g-card.green-card { background: var(--green-light); border-color: #BBF7D0; }
+.g-card.blue-card { background: var(--accent-light); border-color: #BAE6FD; }
+.g-card.bg-white { background: #fff; }
+.g-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.g-icon.green { background: rgba(22,163,74,.15); }
+.g-icon.blue { background: rgba(13,63,122,.1); }
+.g-icon svg { width: 24px; height: 24px; }
+.g-icon.green svg { color: var(--green); }
+.g-icon.blue svg { color: var(--primary); }
+.g-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: .3rem; }
+.g-card p { font-size: .875rem; color: var(--text-muted); line-height: 1.65; }
+
+/* ─── CTA BAND ─── */
+.cta-band {
+  background: linear-gradient(135deg, #0A2D5C 0%, var(--primary) 50%, #1558A8 100%);
+  padding: 5rem 1.25rem; text-align: center; position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(14,165,233,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-band h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; }
+.cta-band p { color: #BAE6FD; font-size: 1rem; margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.btn-big {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green); color: #fff;
+  font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+  padding: 16px 36px; border-radius: 99px; border: none; cursor: pointer;
+  transition: all .2s; letter-spacing: .3px;
+}
+.btn-big:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(22,163,74,.4);
+}
+.btn-big svg { width: 18px; height: 18px; }
+
+/* ─── FAQ ─── */
+.faq-section { background: var(--bg); }
+.faq-wrap { max-width: 720px; margin: 0 auto; }
+.faq-item {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; margin-bottom: .75rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.faq-item.open { border-color: var(--primary-light); box-shadow: var(--shadow-sm); }
+.faq-q {
+  width: 100%; text-align: left; background: #fff;
+  padding: 1.1rem 1.25rem; cursor: pointer; border: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-family: 'Outfit', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text);
+  transition: background .15s;
+}
+.faq-q:hover { background: #F8FAFC; }
+.faq-item.open .faq-q { background: #EFF6FF; color: var(--primary); }
+.faq-arrow {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--border); display: grid; place-items: center; flex-shrink: 0;
+  transition: transform .3s, background .2s;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--accent-light); }
+.faq-arrow svg { width: 12px; height: 12px; color: var(--text-muted); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .25s;
+  background: #F8FAFC; font-size: .9rem; color: var(--text-muted); line-height: 1.7;
+  padding: 0 1.25rem;
+}
+.faq-a.open { max-height: 300px; padding: 1rem 1.25rem 1.25rem; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #0A1F3D; color: #94A3B8;
+  padding: 3.5rem 1.25rem 2rem;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+}
+@media(min-width:640px) { .footer-inner { grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; } }
+.footer-brand .f-logo {
+  font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 700;
+  color: #fff; margin-bottom: .5rem; display: flex; align-items: center; gap: 8px;
+}
+.footer-brand p { font-size: .85rem; line-height: 1.65; margin-top: .5rem; max-width: 280px; }
+.footer-senai {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  padding: 6px 12px; border-radius: 99px; font-size: .75rem;
+  color: #BAE6FD; margin-top: 1rem; font-weight: 500;
+}
+.footer-col h4 {
+  font-family: 'Outfit', sans-serif; font-size: .8rem; font-weight: 700;
+  color: #fff; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 1rem;
+}
+.footer-link {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: .875rem; margin-bottom: .75rem; transition: color .15s;
+}
+.footer-link:hover { color: #E0F2FE; }
+.footer-link svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; color: #4A8FC2; }
+.footer-divider { height: 1px; background: rgba(255,255,255,.07); margin: 2rem 0 1.5rem; max-width: var(--max); margin-left: auto; margin-right: auto; }
+.footer-bottom {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: .75rem; font-size: .78rem;
+}
+.footer-bottom-left { display: flex; align-items: center; gap: 6px; }
+.footer-bottom-left svg { width: 14px; height: 14px; color: #4A8FC2; }
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float {
+  position: fixed; bottom: 24px; right: 20px; z-index: 999;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+}
+.wa-tooltip {
+  background: #fff; color: var(--text);
+  font-size: .8rem; font-weight: 500;
+  padding: 8px 14px; border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap; opacity: 0; transform: translateX(8px);
+  transition: opacity .2s, transform .2s;
+  pointer-events: none;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+.wa-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; display: grid; place-items: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 2px 6px rgba(0,0,0,.15);
+  cursor: pointer; transition: transform .2s, box-shadow .2s;
+  animation: pulse-glow 3s 2s infinite;
+  border: none;
+}
+.wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
+.wa-btn svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ─── SCROLL-TO-TOP ─── */
+.scroll-top {
+  position: fixed; bottom: 88px; right: 20px; z-index: 999;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  display: grid; place-items: center; cursor: pointer;
+  box-shadow: var(--shadow-md); opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  border: none;
+}
+.scroll-top.visible { opacity: 1; pointer-events: all; }
+.scroll-top:hover { transform: scale(1.08); }
+.scroll-top svg { width: 16px; height: 16px; }
+
+/* ─── SUCCESS MODAL ─── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(10,29,61,.6); backdrop-filter: blur(4px);
+  display: grid; place-items: center;
+  opacity: 0; pointer-events: none; transition: opacity .25s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: #fff; border-radius: var(--radius-xl);
+  padding: 2.5rem; max-width: 420px; width: calc(100% - 2.5rem);
+  text-align: center;
+  transform: scale(.9); transition: transform .25s;
+  box-shadow: var(--shadow-lg);
+}
+.modal-overlay.active .modal-box { transform: scale(1); }
+.modal-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--green-light); display: grid; place-items: center;
+  margin: 0 auto 1.5rem;
+}
+.modal-icon svg { width: 36px; height: 36px; color: var(--green); }
+.modal-box h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: .5rem; }
+.modal-box p { font-size: .9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem; }
+.modal-close {
+  padding: 12px 28px; background: var(--primary); color: #fff;
+  border: none; border-radius: var(--radius-sm);
+  font-family: 'Outfit', sans-serif; font-weight: 700; cursor: pointer;
+  transition: background .2s;
+}
+.modal-close:hover { background: var(--primary-light); }
+
+/* ─── RESPONSIVE TWEAKS ─── */
+@media(max-width:767px) {
+  .section { padding: 3.5rem 1.25rem; }
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-form { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 12h2M20 12h2M12 2v2M12 20v2M5.64 5.64l1.41 1.41M16.95 16.95l1.41 1.41M5.64 18.36l1.41-1.41M16.95 7.05l1.41-1.41"/>
+          <circle cx="12" cy="12" r="5"/>
+        </svg>
+      </div>
+      Clima Garantido
+    </a>
+    <button class="nav-cta" onclick="document.getElementById('form-nome').focus(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'})">
+      Assinar Agora
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="live-dot"></span>
+        Araguaína · Tocantins · Sem fidelidade
+      </div>
+      <h1>
+        Manutenção de Ar-Condicionado por Assinatura em Araguaína – <span class="price-highlight">R$ 49/mês</span>
+      </h1>
+      <p class="hero-sub">
+        Sem surpresas no orçamento. Técnicos especializados do SENAI fazem a limpeza e revisão do seu aparelho a cada 60 dias, com prioridade em emergências.
+      </p>
+      <div class="hero-badges">
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Sem fidelidade
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Técnicos SENAI
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          1ª visita em até 48h
+        </div>
+        <div class="hbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Emergência prioritária
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-form-wrap">
+      <div class="hero-form">
+        <div class="form-header">
+          <div class="form-tag">Garanta sua assinatura</div>
+          <h3>Receba contato em até 48h</h3>
+          <p>Preencha e nossa equipe entra em contato rapidamente</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="form-nome">Nome completo</label>
+            <input type="text" id="form-nome" placeholder="Seu nome" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="form-tel">Telefone</label>
+            <input type="tel" id="form-tel" placeholder="(63) 9 9999-9999" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="form-tipo">Tipo de cliente</label>
+            <select id="form-tipo">
+              <option value="">Selecione...</option>
+              <option>Residencial</option>
+              <option>Comercial</option>
+              <option>Clínica / Consultório</option>
+              <option>Escritório</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-qtd">Qtd. de aparelhos</label>
+            <select id="form-qtd">
+              <option value="">Selecione...</option>
+              <option>1 aparelho</option>
+              <option>2 a 3 aparelhos</option>
+              <option>4 ou mais</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-msg">Mensagem (opcional)</label>
+          <textarea id="form-msg" placeholder="Dúvidas, bairro, tipo de aparelho..."></textarea>
+        </div>
+
+        <button class="btn-submit" onclick="submitForm()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2 15 22 11 13 2 9l20-7z"/></svg>
+          QUERO GARANTIR MEU CLIMA – ASSINAR AGORA
+        </button>
+        <p class="form-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Dados seguros. Sem spam. Sem fidelidade.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-strip-inner">
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div><span class="proof-num">200+</span> clientes em Araguaína</div>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><span class="proof-num">SENAI</span> credenciado</div>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div>Visita em <span class="proof-num">48h</span></div>
+    </div>
+    <div class="proof-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <div>Economia de <span class="proof-num">30%</span> em energia</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag-pill"><span class="dot"></span> Como funciona</div>
+      <h2>Simples como deve ser</h2>
+      <p>Três passos e seu ar-condicionado está protegido o ano inteiro — sem burocracia, sem fidelidade.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num-wrap">
+          <div class="step-num">1</div>
+          <div class="step-label">Primeiro passo</div>
+        </div>
+        <h3>Escolha seu plano</h3>
+        <p>Residencial ou Comercial — escolha o plano que melhor se encaixa no seu espaço e quantidade de aparelhos. Tudo sem fidelidade.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        </div>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num-wrap">
+          <div class="step-num">2</div>
+          <div class="step-label">Segundo passo</div>
+        </div>
+        <h3>Agendamos em até 48h</h3>
+        <p>Após a contratação, nossa equipe entra em contato rapidamente para marcar a primeira visita técnica no horário que funcionar para você.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num-wrap">
+          <div class="step-num">3</div>
+          <div class="step-label">Terceiro passo</div>
+        </div>
+        <h3>Revisão completa a cada 60 dias</h3>
+        <p>Limpeza de filtros, verificação de gás e componentes elétricos. Tudo documentado em relatório. Você fica tranquilo, seu ar-condicionado fica funcionando bem.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plans-section section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag-pill"><span class="dot"></span> Planos e preços</div>
+      <h2>Sem fidelidade. Cancele quando quiser.</h2>
+      <p>Planos pensados para cada perfil — do apartamento familiar ao comércio que não pode parar.</p>
+    </div>
+    <div class="plans-grid">
+
+      <!-- Básico -->
+      <div class="plan-card reveal reveal-delay-1">
+        <div class="plan-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Básico Residencial</h3>
+        <div class="plan-price">R$ 49<span>/mês</span></div>
+        <div class="plan-sub">Para 1 aparelho · Ideal para apartamentos</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>1 aparelho coberto</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Limpeza de filtros a cada 60 dias</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Prioridade em emergências</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Relatório de cada visita</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Sem fidelidade</li>
+        </ul>
+        <button class="plan-btn outline" onclick="scrollToForm()">Contratar plano</button>
+      </div>
+
+      <!-- Família -->
+      <div class="plan-card popular reveal reveal-delay-2">
+        <div class="popular-badge">Mais popular</div>
+        <div class="plan-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><line x1="9" y1="22" x2="9" y2="12"/><line x1="15" y1="22" x2="15" y2="12"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+        </div>
+        <h3>Família Residencial</h3>
+        <div class="plan-price">R$ 99<span>/mês</span></div>
+        <div class="plan-sub">Até 3 aparelhos · Melhor custo-benefício</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Até 3 aparelhos cobertos</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Limpeza a cada 60 dias</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Check-up semestral completo</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>10% de desconto em consertos</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Prioridade em emergências</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Sem fidelidade</li>
+        </ul>
+        <button class="plan-btn primary" onclick="scrollToForm()">Contratar plano</button>
+      </div>
+
+      <!-- Comercial -->
+      <div class="plan-card reveal reveal-delay-3">
+        <div class="plan-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <h3>Comercial</h3>
+        <div class="plan-price">R$ 199<span>/mês</span></div>
+        <div class="plan-sub">Lojas, escritórios e clínicas</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Visita técnica mensal</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Laudo técnico documentado</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Atendimento emergencial 24h</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Desconto em peças e consertos</li>
+          <li><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Sem fidelidade</li>
+        </ul>
+        <button class="plan-btn green" onclick="scrollToForm()">Contratar plano</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="who-section section">
+  <div class="container">
+    <div class="who-grid">
+      <div class="who-visual reveal">
+        <div class="who-visual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Técnicos formados pelo SENAI Tocantins</h3>
+        <p>Experiência comprovada em climatização e refrigeração. Atendimento com pontualidade, respeito e foco em resultados.</p>
+        <div class="senai-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Credenciado SENAI – Araguaína/TO
+        </div>
+      </div>
+
+      <div class="who-attrs reveal reveal-delay-2">
+        <div class="who-attr">
+          <div class="who-attr-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <h4>Uniforme e EPIs sempre</h4>
+            <p>Técnicos identificados com uniforme e todos os equipamentos de proteção em cada visita.</p>
+          </div>
+        </div>
+        <div class="who-attr">
+          <div class="who-attr-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Pontualidade garantida</h4>
+            <p>Respeitamos seu tempo. Se atrasar sem aviso, você recebe 50% de desconto no mês seguinte.</p>
+          </div>
+        </div>
+        <div class="who-attr">
+          <div class="who-attr-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h4>Treinamento contínuo</h4>
+            <p>Equipe atualizada em manutenção preventiva e atendimento ao cliente — não apenas técnica.</p>
+          </div>
+        </div>
+        <div class="who-attr">
+          <div class="who-attr-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Seguro de responsabilidade civil</h4>
+            <p>Todos os atendimentos cobertos. Sua tranquilidade é nossa responsabilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag-pill"><span class="dot"></span> Por que assinar em Araguaína?</div>
+      <h2>O clima aqui exige mais do seu ar-condicionado</h2>
+      <p>Araguaína tem uma das médias de temperatura mais altas do Brasil. Seu aparelho trabalha no limite — a manutenção preventiva não é opcional, é necessária.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-num">01</div>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h4>Quase 9 meses de calor por ano</h4>
+        <p>O ar-condicionado em Araguaína trabalha muito mais que a média nacional. Sem manutenção, o desgaste é acelerado e as quebras acontecem quando menos se espera.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-num">02</div>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>Até 30% menos na conta de luz</h4>
+        <p>Aparelhos com filtros limpos e gás calibrado consomem bem menos energia. A assinatura pode se pagar todos os meses na economia da conta de energia.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-num">03</div>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h4>Evite gastos de R$ 800 a R$ 1.500</h4>
+        <p>Uma quebra de compressor custa isso. Com a assinatura por R$ 49/mês, você previne esse problema — e ainda tem desconto no conserto se precisar.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-num">04</div>
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Equipe local, atendimento rápido</h4>
+        <p>Somos de Araguaína. Conhecemos os bairros, o clima e as particularidades da região. Atendimento ágil porque estamos aqui, não em outra cidade.</p>
+      </div>
+    </div>
+
+    <div class="why-highlight-box reveal">
+      <div class="wh-icon">💡</div>
+      <div>
+        <h3>A matemática é simples</h3>
+        <p>R$ 49/mês × 12 meses = R$ 588/ano. Uma única quebra de compressor custa até R$ 1.500. Com a assinatura, você economiza dinheiro e evita o estresse de ficar sem ar no verão de Araguaína.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<section class="guarantees section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag-pill"><span class="dot"></span> Garantias</div>
+      <h2>Assumimos o compromisso com você</h2>
+      <p>Não é só promessa — são compromissos formais que protegem você desde o primeiro dia.</p>
+    </div>
+    <div class="g-grid">
+      <div class="g-card green-card reveal reveal-delay-1">
+        <div class="g-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>7 dias para cancelar sem custo</h4>
+          <p>Contratou e mudou de ideia? Cancele em até 7 dias corridos sem pagar absolutamente nada. Sem letras miúdas.</p>
+        </div>
+      </div>
+      <div class="g-card blue-card reveal reveal-delay-2">
+        <div class="g-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Atraso = 50% de desconto</h4>
+          <p>Se atrasar uma visita programada sem aviso prévio, você ganha automaticamente 50% de desconto no mês seguinte. Pontualidade é respeito.</p>
+        </div>
+      </div>
+      <div class="g-card bg-white reveal reveal-delay-3" style="border:1px solid var(--border)">
+        <div class="g-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Profissionais qualificados e segurados</h4>
+          <p>Toda equipe possui seguro de responsabilidade civil ativo. Seu imóvel e seu patrimônio estão protegidos durante cada atendimento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="reveal">Pronto para ter um clima garantido em casa ou no trabalho?</h2>
+    <p class="reveal reveal-delay-1">Sem fidelidade. Sem letras miúdas. Técnicos do SENAI na sua porta em até 48h. A partir de R$ 49/mês.</p>
+    <button class="btn-big reveal reveal-delay-2" onclick="scrollToForm()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 2 11 13M22 2 15 22 11 13 2 9l20-7z"/></svg>
+      QUERO GARANTIR MEU CLIMA – ASSINAR AGORA
+    </button>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section">
+  <div class="container">
+    <div class="section-header text-center mx-auto reveal">
+      <div class="tag-pill"><span class="dot"></span> Dúvidas frequentes</div>
+      <h2>Perguntas que todo mundo faz</h2>
+      <p>Clareza antes de assinar. Se ainda tiver dúvida, fale com a gente pelo WhatsApp.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Preciso assinar por quanto tempo?
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">Mês a mês, sem fidelidade. Você pode cancelar a qualquer momento sem multa. Acreditamos que você vai continuar pelos resultados — não por obrigação contratual.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Atendem bairros afastados como Setor Pedro Felix ou Vila Norte?
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">Sim! Atendemos toda a área urbana de Araguaína, incluindo bairros mais distantes. Se tiver dúvida sobre sua localização específica, basta nos chamar no WhatsApp e confirmamos o atendimento sem compromisso.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          E se meu ar quebrar entre as visitas?
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">Assinantes têm prioridade total no atendimento emergencial. Além disso, você tem 10% de desconto no conserto — mesmo que seja algo fora da manutenção preventiva padrão. Nossa manutenção regular justamente evita que isso aconteça.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Posso pular um mês?
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">Sim. Você pode suspender a assinatura por até 60 dias sem nenhuma taxa. Basta nos avisar com antecedência e programamos a retomada para quando quiser.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          O serviço inclui compra de peças?
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="faq-a">A manutenção preventiva cobre mão de obra, limpeza completa e verificações. Se for necessária a substituição de peças, você recebe um orçamento transparente com desconto exclusivo para assinantes. Sem surpresas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <div class="f-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A8FC2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        Clima Garantido
+      </div>
+      <p>Manutenção preventiva de ar-condicionado por assinatura. Tecnicos especializados, atendimento local, preço justo.</p>
+      <div class="footer-senai">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Equipe técnica credenciada SENAI – Araguaína/TO
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <div class="footer-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.41 2 2 0 013.59 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6l.75-.75a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        (63) 99999-9999
+      </div>
+      <div class="footer-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        contato@climagarantido.com.br
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Horário</h4>
+      <div class="footer-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Segunda a Sábado<br>8h às 18h
+      </div>
+      <div class="footer-link" style="margin-top:.5rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Araguaína e região – TO
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+  <div class="footer-bottom container">
+    <div class="footer-bottom-left">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      © 2025 Clima Garantido · Todos os direitos reservados
+    </div>
+    <div>Araguaína, Tocantins</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-tooltip">Fale no WhatsApp agora</div>
+  <button class="wa-btn" onclick="openWA()" aria-label="Contato via WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.822.762 5.463 2.088 7.733L2 30l6.47-2.063A13.937 13.937 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.47 11.47 0 01-5.847-1.6l-.42-.25-4.35 1.386 1.418-4.23-.275-.44A11.47 11.47 0 014.5 16C4.5 9.649 9.649 4.5 16 4.5S27.5 9.649 27.5 16 22.351 27.5 16 27.5zm6.29-8.59c-.344-.172-2.037-1.004-2.352-1.119-.315-.115-.545-.172-.774.172-.23.344-.89 1.119-1.09 1.348-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.707-1.022-.912-1.712-2.037-1.912-2.38-.2-.344-.021-.529.15-.7.154-.153.344-.4.516-.6.172-.2.23-.344.344-.574.115-.23.057-.43-.028-.6-.086-.172-.775-1.864-1.061-2.552-.28-.672-.563-.58-.774-.59l-.66-.012c-.23 0-.6.086-.914.43-.315.344-1.2 1.172-1.2 2.857 0 1.685 1.228 3.314 1.4 3.543.172.23 2.418 3.694 5.857 5.182.819.353 1.458.565 1.956.723.822.262 1.571.225 2.162.136.66-.099 2.037-.832 2.323-1.636.287-.804.287-1.492.2-1.636-.086-.144-.315-.23-.66-.4z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3>Solicitação enviada!</h3>
+    <p>Nossa equipe vai entrar em contato em até 48 horas para agendar sua primeira visita. Bem-vindo ao Clima Garantido!</p>
+    <button class="modal-close" onclick="closeModal()">Ótimo, obrigado!</button>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// FAQ
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// Phone mask
+const telInput = document.getElementById('form-tel');
+if (telInput) {
+  telInput.addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length <= 11) {
+      v = v.replace(/^(\d{2})(\d)/, '($1) $2');
+      v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    }
+    e.target.value = v;
+  });
+}
+
+// Form submit
+function submitForm() {
+  const nome = document.getElementById('form-nome').value.trim();
+  const tel = document.getElementById('form-tel').value.trim();
+  const tipo = document.getElementById('form-tipo').value;
+  const qtd = document.getElementById('form-qtd').value;
+  if (!nome || !tel || !tipo || !qtd) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.getElementById('form-nome').value = '';
+  document.getElementById('form-tel').value = '';
+  document.getElementById('form-tipo').value = '';
+  document.getElementById('form-qtd').value = '';
+  document.getElementById('form-msg').value = '';
+}
+
+// Scroll top
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTopBtn');
+  if (window.scrollY > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+// Scroll to form
+function scrollToForm() {
+  document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => document.getElementById('form-nome').focus(), 600);
+}
+
+// WhatsApp
+function openWA() {
+  const msg = encodeURIComponent('Olá, quero saber mais sobre a assinatura de manutenção de ar em Araguaína');
+  window.open('https://wa.me/5563999999999?text=' + msg, '_blank');
+}
+
+// Close modal on overlay click
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>
